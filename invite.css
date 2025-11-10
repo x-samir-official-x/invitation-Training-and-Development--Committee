@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  color: #f1c40f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+}
+
+/* خلفية فيديو شفافة */
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  opacity: 0.25;
+  object-fit: cover;
+  filter: blur(2px);
+}
+
+.invite {
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.invite h1 {
+  font-size: 2rem;
+  color: #ffd700;
+  text-shadow: 0 0 15px #d4af37;
+  margin-bottom: 15px;
+  animation: glow 2.5s infinite alternate;
+}
+
+.invite p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #fff7d1;
+  max-width: 500px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 2s ease forwards;
+  animation-delay: 1s;
+}
+
+.footer {
+  margin-top: 25px;
+  font-size: 1rem;
+  color: #d8c793;
+  opacity: 0;
+  animation: fadeIn 3s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #b8860b; }
+  to { text-shadow: 0 0 25px #ffd700; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.shine {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
